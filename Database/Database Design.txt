@@ -1,0 +1,26 @@
+(*) UserTable
+
+1.userId
+2.name
+3.gender
+4.dob
+5.age(derived)
+6.email
+7.dStartName (Default route start)
+8.dEndName (Defalt route end)
+9.drivingLicenseNo(NULL) 
+10.password
+11.userToken
+12.authenticationId(NOT NULL)
+13.userBalance(>0)
+14.contactNo
+15.dStartCoord
+16.dEndCoord
+
+
+(*)drivingTable
+
+drivingID=userId
+globalMapFlag
+
+
