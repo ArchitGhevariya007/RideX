@@ -1,0 +1,39 @@
+
+CREATE TABLE Map(
+    mapId INTEGER AUTO_INCREMENT PRIMARY KEY,
+    startLocation VARCHAR2(1000) NOT NULL,
+    endLocation VARCHAR2(1000) NOT NULL,
+    startLatitude VARCHAR2(10) NOT NULL,
+    startLongitude VARCHAR2(10) NOT NULL,
+    endLatitude VARCHAR2(10) NOT NULL,
+    endLongitude VARCHAR2(10) NOT NULL,
+    createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(mapId)
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+-
+
+2)check:
+
+-
+
+3)foreign key:
+
+-
+
+4)default:
+
+
+ALTER TABLE Users
+ALTER createdAt SET DEFAULT CURRENT_TIMESTAMP;
+
+5)unique:
+
+-
+
+

@@ -8,4 +8,3 @@ Security : Cloudfare (send credential to self email)
 Logo : Archit Like but Capital X in (RideX)
 Repository : RideX  (send invites to 5 person)
 dashboard design start(just logo and name).
-
