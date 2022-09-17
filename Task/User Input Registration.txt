@@ -1,7 +1,44 @@
 note: 
 
 
-1) Users/ SIGNUP -AUTO FILL
+
+
+1)Employees/ Admin- Registraion of employee
+
+employeeId== (2 type EMP1234567890/admin@ridex.com) == {length-min:13 max:15}
+
+name must be less than 256 characters
+gender can be (Male/Female/Other) (drop down)
+dob == date picker
+email == it must be unique as we are going to email some notifications. (max 256 characters) 
+contact == it must be unique as we are going to call (take input use regex e.g +91 96245 00000) ) (less than 15 characters) (give prefix +91)
+userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
+(you can give dropdown+custom input box of number)
+
+2)Map
+
+NOTE : Input method must be robust becuase from 18 year to 58 year age ap can be our audience so my suggestion
+
+just give two input box{start,end}  and based on that coordinate can be fetched from map and other one is same as but let the user choose location from map by selecting/clicking area point on map (not typing)
+ so that start and end input textbox will be filled automatically
+
+below are required map details
+
+endLocation == startLocation ==
+ (Human readable format) (ask user input)
+
+ (auto fetch from map based on selection/typing in textbox)
+{
+start_longitude==
+start_latitude ==
+end_latitude==
+end_longitude== 
+}
+
+createdAt==(user input not required)
+
+
+3) Users/ SIGNUP -AUTO FILL
 
 userId == EmployeeId reference kre che  (take input and use regex  of 2 type EMP1234567890/admin@ridex.com) {length-min:13 max:15}
 userType == {not required input by default 'Employee'}
@@ -21,20 +58,7 @@ userAcess == {input not needed by default allowed}
 createdAt == (input not required)
 
 
-2)Employees/ Admin- Registraion of employee
-
-employeeId== (2 type EMP1234567890/admin@ridex.com) == {length-min:13 max:15}
-
-name must be less than 256 characters
-gender can be (Male/Female/Other) (drop down)
-dob == date picker
-email == it must be unique as we are going to email some notifications. (max 256 characters) 
-contact == it must be unique as we are going to call (take input use regex e.g +91 96245 00000) ) (less than 15 characters) (give prefix +91)
-userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
-(you can give dropdown+custom input box of number)
-
-
-3)Vehicles
+4)Vehicles
 
 note :
 
@@ -100,7 +124,7 @@ else if(vehicleType=="Multiple wheeler")
 }
 
 
-4) Rides
+5) Rides
 
 note:
 
@@ -120,4 +144,37 @@ rideStatus (input required as driver will end ride)
 
 createdAt (input not required)
 
+
+6) Passengers_ride_map
+
+rideId == (no input required)( auto fetch from dashboard from Ride table)
+
+passengerId ==  (no input required)( auto fetch from chat when driver accept request from Users table)
+
+passengerRating == (input from passenger at the end of ride)
+
+passengerStatus == (input from driver if he/she wants to eliminate passenger in between but by default active(TRUE))
+
+addedAt== (No input required) (auto field)
+
+7)
+
+8) Ridex_support
+
+
+ticketId == (no input )
+registeredAt == (no input as auto generate at backend)
+
+@)user side input:
+
+userId == {fetch from dashboard at complaint time}
+ticketDesctiption == (ask input less than 1000 ) (use <textarea>:fixed height width)
+
+ticketFeedback == (when admin resolve an issue then after email is sent by admin to user for feedback at that time user gives feedback)
+
+@)admin side input:
+
+ticketRemarks ==(no input when user creates ticket) (admin input when ticket gets resolved as admin mention how issue is resolved)
+TicketStatus == (no input when user creates ticket by default true) (admin input as Close(false) when ticket gets resolved)
+resolvedAt == (when admin solves issue)(no input as auto generate at backend)
 
