@@ -1,0 +1,39 @@
+
+CREATE TABLE Ride_rate(
+    coord
+    vehicleNo VARCHAR2(10),
+    vehicleType VARCHAR2(15) NOT NULL,
+    modelName VARCHAR2(256) NOT NULL,
+    modelType VARCHAR2(256) NOT NULL,
+    totalSeat SMALLINT ZEROFILL NOT NULL,
+    vehicleAccess BOOLEAN,
+    registeredAt TIMESTAMP NOT NULL,
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+-
+
+2)check:
+
+-
+
+
+3)foreign key:
+
+-
+
+4)default:
+
+
+-
+
+5)unique:
+
+-
+
+
+

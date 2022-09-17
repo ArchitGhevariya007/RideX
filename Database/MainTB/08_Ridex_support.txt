@@ -1,0 +1,56 @@
+
+CREATE TABLE Ridex_support(
+    ticketId INTEGER AUTO_INCREMENT,
+    userId VARCHAR2(21),
+    ticketDescription VARCHAR2(1000),
+    ticketRemarks VARCHAR2(1000),
+    TicketStatus BOOLEAN,
+    registeredAt TIMESTAMP NOT NULL,
+    resolvedAt TIMESTAMP,
+    ticketFeedback SMALLINT ZEROFILL,
+    PRIMARY KEY(ticketId)
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+-
+
+2)check:
+
+ALTER TABLE Ridex_support
+ADD CONSTRAINT CHK_ticket_feedack CHECK(ticketFeedback BETWEEN 0 AND 5);
+
+
+3)foreign key:
+
+ALTER TABLE Ridex_support
+ADD CONSTRAINT FK_ridex_support_user_id
+FOREIGN KEY(userId) REFERENCES Users(userId);
+
+4)default:
+
+ALTER TABLE Ridex_support ALTER ticketStatus SET DEFAULT TRUE;
+
+ALTER TABLE Ridex_support
+ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Ridex_support
+ALTER resolvedAt SET DEFAULT NULL;
+
+ALTER TABLE Ridex_support
+ALTER ticketRemarks SET DEFAULT "No remarks";
+
+ALTER TABLE Ridex_support
+ALTER ticketFeedback SET DEFAULT "Not given";
+
+
+
+5)unique:
+
+-
+
+
+

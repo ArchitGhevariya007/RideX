@@ -4,9 +4,9 @@ CREATE TABLE Rides(
     driverId VARCHAR2(16),
     vehicleId VARCHAR2(10),
     routeId INTEGER,
-    accomCap SMALLINT NOT NULL,
-    occupSeat SMALLINT NOT NULL,
-    rideRating FLOAT(2,1)NOT NULL,
+    accomCap SMALLINT ZEROFILL NOT NULL,
+    occupSeat SMALLINT ZEROFILL NOT NULL,
+    rideRating FLOAT(2,1),
     rideStatus BOOLEAN,
     createdAt TIMESTAMP NOT NULL,
     PRIMARY KEY (rideId) 
@@ -47,7 +47,7 @@ FOREIGN KEY (routeId) REFERENCES Map(mapId);
 4)default:
 
 ALTER TABLE Rides
-ALTER rideRating SET DEFAULT 0.0;
+ALTER rideRating SET DEFAULT NULL;
 
 ALTER TABLE Rides
 ALTER occupSeat SET DEFAULT 0;

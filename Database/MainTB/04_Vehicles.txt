@@ -4,7 +4,7 @@ CREATE TABLE Vehicles(
     vehicleType VARCHAR2(15) NOT NULL,
     modelName VARCHAR2(256) NOT NULL,
     modelType VARCHAR2(256) NOT NULL,
-    totalSeat SMALLINT NOT NULL,
+    totalSeat SMALLINT ZEROFILL NOT NULL,
     vehicleAccess BOOLEAN,
     registeredAt TIMESTAMP NOT NULL,
 );
