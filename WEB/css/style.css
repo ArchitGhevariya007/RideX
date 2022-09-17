@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "MyWebFont";
+    src: url(./assets/fonts/UberMoveMedium.otf);
+ }
+
+.nav{
+    background-color:#000000;
+    padding: 12px 12px 12px 30px;
+    width: 100%;
+}
+
+.logo{
+    width:80px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="text"],input[type="password"],input[type="number"]{
+    width:328px;
+    height:45px;
+    padding: 8px 5px 8px 15px;
+    border-radius: 8px;
+    border:0px;
+    background-color:#eeeeee;
+    color:#6b6b6b;
+    margin-bottom: 12px;
+}
+
+input[type="button"]{
+    width:328px;
+    height:45px;
+    padding: 8px 5px 8px 15px;
+    border-radius: 8px;
+    border:0px;
+    background-color:#000000;
+    color:#ffffff;
+    margin-top: 15px;
+}
