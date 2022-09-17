@@ -2,7 +2,6 @@ note:
 
 
 
-
 1)Employees/ Admin- Registraion of employee
 
 employeeId== (2 type EMP1234567890/admin@ridex.com) == {length-min:13 max:15}
@@ -157,7 +156,15 @@ passengerStatus == (input from driver if he/she wants to eliminate passenger in 
 
 addedAt== (No input required) (auto field)
 
-7)
+7)Ride_rate
+
+admin panel input/update operation
+
+distanceUnitName == (Dropdown KM/Meter)
+IdealDistance == 1 to 100/1000/.../1000000 (dropdown+textbox)
+RidexCoin == 1 to 100/1000/.../1000000 (dropdown+textbox)
+INRval == 1.0 to  100.00/1000.00/.../1000000.00 (dropdown+textbox)
+updatedAt == (auto updated field)
 
 8) Ridex_support
 

@@ -6,7 +6,7 @@ CREATE TABLE Rides(
     routeId INTEGER,
     accomCap SMALLINT ZEROFILL NOT NULL,
     occupSeat SMALLINT ZEROFILL NOT NULL,
-    rideRating FLOAT(2,1),
+    rideRating DOUBLE(2,1),
     rideStatus BOOLEAN,
     createdAt TIMESTAMP NOT NULL,
     PRIMARY KEY (rideId) 
