@@ -1,0 +1,30 @@
+
+CREATE TABLE Passenger_ride_map(
+    mapId INTEGER AUTO_INCREMENT, 
+
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+-
+
+2)check:
+
+-
+
+3)foreign key:
+
+-
+
+4)default:
+
+-
+
+5)unique:
+
+-
+
+

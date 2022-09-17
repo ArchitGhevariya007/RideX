@@ -1,0 +1,40 @@
+
+CREATE TABLE Rides(
+    rideId INTEGER AUTO_INCREMENT,
+    driverId VARCHAR2(16),
+    vehicleId VARCHAR2(10),
+    accomCap SMALLINT NOT NULL,
+    PRIMARY KEY (rideId) 
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+-
+
+2)check:
+
+ALTER TABLE Rides
+ADD CONSTRAINT CHK_accomCap CHECK(accomCap>=1 AND accomCap<=44);
+
+3)foreign key:
+
+ALTER TABLE Rides
+ADD CONSTRAINT FK_driver_id
+FOREIGN KEY (driverId) REFERENCES Users(drivingLicenseNo);
+
+ALTER TABLE Rides
+ADD CONSTRAINT FK_vehicle_id
+FOREIGN KEY (vehicleId) REFERENCES Vehicles(vehicleNo);
+
+4)default:
+
+-
+
+5)unique:
+
+-
+
+
