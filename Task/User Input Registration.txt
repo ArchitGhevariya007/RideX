@@ -98,3 +98,26 @@ else if(vehicleType=="Multiple wheeler")
     }
 
 }
+
+
+4) Rides
+
+note:
+
+[intial input]
+
+rideId == (Input not required)
+driverId == (From Users table(License No) auto fill from dashboard)
+vehicleId ==  (From Vehicle table auto fill from dashboard)
+routeId == (input from map selection from map table (mentioned in map Tb))
+accomCap == (user input ) (lengeth should be less than vehicle seat from vehicle table fetch from user dashboard)
+occupSeat == (input not required)
+
+[end input]
+rideRating (input not required as trigger is will calculate average from Passenger_ride_map table)
+
+rideStatus (input required as driver will end ride)
+
+createdAt (input not required)
+
+

@@ -3,7 +3,12 @@ CREATE TABLE Rides(
     rideId INTEGER AUTO_INCREMENT,
     driverId VARCHAR2(16),
     vehicleId VARCHAR2(10),
+    routeId INTEGER,
     accomCap SMALLINT NOT NULL,
+    occupSeat SMALLINT NOT NULL,
+    rideRating FLOAT(2,1)NOT NULL,
+    rideStatus BOOLEAN,
+    createdAt TIMESTAMP NOT NULL,
     PRIMARY KEY (rideId) 
 );
 
@@ -17,7 +22,13 @@ CREATE TABLE Rides(
 2)check:
 
 ALTER TABLE Rides
-ADD CONSTRAINT CHK_accomCap CHECK(accomCap>=1 AND accomCap<=44);
+ADD CONSTRAINT CHK_accomCap CHECK(accomCap BETWEEN 2 AND 44);
+
+ALTER TABLE Rides
+ADD CONSTRAINT CHK_occupSeat CHECK(occupSeat <= accomCap);
+
+ALTER TABLE Rides
+ADD CONSTRAINT CHK_ride_rating CHECK(rideRating BETWEEN 0.0 AND 5.0);
 
 3)foreign key:
 
@@ -29,9 +40,22 @@ ALTER TABLE Rides
 ADD CONSTRAINT FK_vehicle_id
 FOREIGN KEY (vehicleId) REFERENCES Vehicles(vehicleNo);
 
+ALTER TABLE Rides
+ADD CONSTRAINT FK_route_id
+FOREIGN KEY (routeId) REFERENCES Map(mapId);
+
 4)default:
 
--
+ALTER TABLE Rides
+ALTER rideRating SET DEFAULT 0.0;
+
+ALTER TABLE Rides
+ALTER occupSeat SET DEFAULT 0;
+
+ALTER TABLE Rides
+ALTER createdAt SET DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Rides ALTER rideStatus SET DEFAULT TRUE;
 
 5)unique:
 
