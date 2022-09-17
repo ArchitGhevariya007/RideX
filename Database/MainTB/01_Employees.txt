@@ -48,7 +48,8 @@ ADD CONSTRAINT UNQ_contact UNIQUE (contact);
 
 6)insert:
 
-insert into Employees() values()
+insert into Employees(employeeId,name,gender,dob,email,contact) values('admin@ridex.com','Ridex Admin','Male','2022-09-21','ridex.mobility@gmail.com','+91 96245 61892');
+
 
 
 

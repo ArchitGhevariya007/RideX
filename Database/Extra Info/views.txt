@@ -1,0 +1,10 @@
+1)Employees
+2)Map
+3)Users
+4)Vehicles
+5)Rides
+6)Passengers_ride_map
+7)Ride_rate
+8)Ridex_support
+
+

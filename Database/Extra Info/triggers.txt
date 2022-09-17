@@ -1,0 +1,23 @@
+
+1)Employees
+2)Map
+3)Users
+4)Vehicles
+
+5)Rides
+
+TRIGGER FOR RIDE DELETION WHERE RECORDS ARE  STIMULTANEOUSLY DELETED FROM Passengers_ride_map
+and Backup is moved to backup Tables
+
+
+6)Passengers_ride_map
+
+
+Trigger for PassengerRating on insert TRIGGER WILL calculate Average rating and insert into 
+Rides table in rideRating
+
+
+7)Ride_rate
+8)Ridex_support
+
+

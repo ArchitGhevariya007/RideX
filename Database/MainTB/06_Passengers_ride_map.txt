@@ -25,7 +25,7 @@ ADD CONSTRAINT CHK_passenger_rating CHECK(passengerRating BETWEEN 0 AND 5);
 
 ALTER TABLE Passengers_ride_map
 ADD CONSTRAINT FK_ride_id
-FOREIGN KEY (rideId) REFERENCES Rides(rideId);
+FOREIGN KEY (rideId) REFERENCES Rides(rideId) ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 ALTER TABLE Passengers_ride_map

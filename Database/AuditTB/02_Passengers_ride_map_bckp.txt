@@ -1,0 +1,57 @@
+
+CREATE TABLE Passengers_ride_map_bckp(
+    rideId INTEGER,
+    passengerId VARCHAR2(21)
+    passengerRating SMALLINT ZEROFILL,
+    passengerStatus BOOLEAN,
+    addedAt TIMESTAMP NOT NULL,
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+ALTER TABLE Passengers_ride_map_bckp
+ADD CONSTRAINT PK_passenger_ride_map_bckp PRIMARY KEY (rideId,passengerId);
+
+2)check:
+
+ALTER TABLE Passengers_ride_map_bckp
+ADD CONSTRAINT CHK_passenger_rating_bckp CHECK(passengerRating BETWEEN 0 AND 5);
+
+3)foreign key:
+
+
+ALTER TABLE Passengers_ride_map_bckp
+ADD CONSTRAINT FK_ride_id_bckp
+FOREIGN KEY (rideId) REFERENCES Rides_bckp(rideId) ON UPDATE CASCADE;
+
+
+ALTER TABLE Passengers_ride_map_bckp
+ADD CONSTRAINT FK_passenger_id_bckp
+FOREIGN KEY (passengerId) REFERENCES Users(usersId);
+
+4)default:
+
+ALTER TABLE Passengers_ride_map_bckp
+ALTER passengerRating SET DEFAULT NULL;
+
+ALTER TABLE Passengers_ride_map_bckp
+ALTER addedAt SET DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE Passengers_ride_map_bckp ALTER passengerStatus SET DEFAULT TRUE;
+
+5)unique:
+
+-
+
+ 
+---------------------------------------------------------------------------------------------
+
+1)Index:
+
+2)Views:
+
+3)Stored procedures:
+

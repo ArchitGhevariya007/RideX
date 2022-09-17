@@ -1,0 +1,71 @@
+
+CREATE TABLE Rides_bckp(
+    rideId INTEGER AUTO_INCREMENT,
+    driverId VARCHAR2(16),
+    vehicleId VARCHAR2(10),
+    routeId INTEGER,
+    accomCap SMALLINT ZEROFILL NOT NULL,
+    occupSeat SMALLINT ZEROFILL NOT NULL,
+    rideRating DOUBLE(2,1),
+    rideStatus BOOLEAN,
+    createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY (rideId) 
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+-
+
+2)check:
+
+ALTER TABLE Rides_bckp
+ADD CONSTRAINT CHK_accomCap_bckp CHECK(accomCap BETWEEN 2 AND 44);
+
+ALTER TABLE Rides_bckp
+ADD CONSTRAINT CHK_occupSeat_bckp CHECK(occupSeat <= accomCap);
+
+ALTER TABLE Rides_bckp
+ADD CONSTRAINT CHK_ride_rating_bckp CHECK(rideRating BETWEEN 0.0 AND 5.0);
+
+3)foreign key:
+
+ALTER TABLE Rides_bckp
+ADD CONSTRAINT FK_driver_id_bckp
+FOREIGN KEY (driverId) REFERENCES Users(drivingLicenseNo);
+
+ALTER TABLE Rides_bckp
+ADD CONSTRAINT FK_vehicle_id_bckp
+FOREIGN KEY (vehicleId) REFERENCES Vehicles(vehicleNo);
+
+ALTER TABLE Rides_bckp
+ADD CONSTRAINT FK_route_id_bckp
+FOREIGN KEY (routeId) REFERENCES Map(mapId);
+
+4)default:
+
+ALTER TABLE Rides_bckp
+ALTER rideRating SET DEFAULT NULL;
+
+ALTER TABLE Rides_bckp
+ALTER occupSeat SET DEFAULT 0;
+
+ALTER TABLE Rides_bckp
+ALTER createdAt SET DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Rides_bckp ALTER rideStatus SET DEFAULT TRUE;
+
+5)unique:
+
+-
+
+---------------------------------------------------------------------------------------------
+
+1)Index:
+
+2)Views:
+
+3)Stored procedures:
+
