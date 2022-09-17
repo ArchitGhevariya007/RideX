@@ -6,7 +6,7 @@ CREATE TABLE Users(
     userToken VARCHAR2(1000) NOT NULL,
     defaultRoute INTEGER,
     drivingLicenseNo VARCHAR2(16),
-    user_access BOOLEAN,
+    userAccess BOOLEAN,
     registeredAt TIMESTAMP NOT NULL
 );
 
@@ -41,7 +41,7 @@ ALTER drivingLicenseNo SET DEFAULT NULL;
 ALTER TABLE Users
 ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
 
-ALTER TABLE Users ALTER user_access SET DEFAULT TRUE;
+ALTER TABLE Users ALTER userAccess SET DEFAULT TRUE;
 
 5)unique:
 
