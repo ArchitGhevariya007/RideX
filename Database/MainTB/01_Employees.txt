@@ -46,6 +46,9 @@ ADD CONSTRAINT UNQ_email UNIQUE (email);
 ALTER TABLE Employees
 ADD CONSTRAINT UNQ_contact UNIQUE (contact);
 
+6)insert:
+
+insert into Employees() values()
 
 
 
