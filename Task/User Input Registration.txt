@@ -4,7 +4,7 @@ note:
 1) Users/ SIGNUP -AUTO FILL
 
 userId == EmployeeId reference kre che  (take input and use regex  of 2 type EMP1234567890/admin@ridex.com) {length-min:13 max:15}
-
+userType == {not required input by default 'Employee'}
 password can be less than 8 characters or greater than 16 characters
 userToken == for cookies (No input needed)
 defaultRoute (total 6 input to backend => Another table first insert here and then to Users Table)
@@ -17,6 +17,7 @@ defaultRoute (total 6 input to backend => Another table first insert here and th
     end longitude : *****
 }
 drivingLicenseNo == (vaidate Driving license API)(exact length 16 r.g GJ05 12345678901) ( input not required)
+userAcess == {input not needed by default allowed}
 createdAt == (input not required)
 
 
@@ -31,3 +32,69 @@ email == it must be unique as we are going to email some notifications. (max 256
 contact == it must be unique as we are going to call (take input use regex e.g +91 96245 00000) ) (less than 15 characters) (give prefix +91)
 userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
 (you can give dropdown+custom input box of number)
+
+
+3)Vehicles
+
+note :
+
+vehicleNo == (exact length of 10) (NumberPlate of vehicle validate API if available) (e.g. GJ05HR0097)
+vehicleAccess == (no input is needed by default true)
+
+---------> Below is dependent combos
+
+if(vehicleType=="Two wheeler")
+{
+    if(modelType=='Bicycle')
+    {
+        totalSeat = 2
+    }
+    else if(modelType=='Tricycle')
+    {
+        totalSeat = 3
+    }
+}
+else if(vehicleType=="Four wheeler")
+{
+    if(modelType=='Hatchback' OR modelType=='Sedan')
+    {
+        totalSeat = 5
+    }
+    else if(modelType=='SUV')
+    {
+        totalSeat = 8/9;
+    }
+    else if(modelType=='MUV')
+    {
+        totalSeat = 6/7/8/9;
+    }
+    else if(modelType=='XUV')
+    {
+        totalSeat = 5/6/7;
+    }
+    else if(modelType=='TUV')
+    {
+        totalSeat = 9;
+    }
+}
+else if(vehicleType=="Multiple wheeler")
+{
+
+    if(modelType=='Mini Van')
+    {
+        	     totalSeat = 8/9/10;
+    }
+   else if(modelType=='Van')
+    {
+               11 <= totalSeat =<  15;
+    }
+    else if(modelType=='Mini Bus')
+    {
+        	     16 <= totalSeat =<  30;
+    }
+    else if(modelType=='Bus')
+    {
+             31 <= totalSeat =<  45;
+    }
+
+}
