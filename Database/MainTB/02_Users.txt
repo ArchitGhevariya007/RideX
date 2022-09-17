@@ -1,17 +1,13 @@
 
 CREATE TABLE Users(
-    userId VARCHAR2(12),
+    userId VARCHAR2(21),
+    userType VARCHAR2(8) NOT NULL,
     password VARCHAR2(1000) NOT NULL,
     userToken VARCHAR2(1000) NOT NULL,
-    name VARCHAR2(500) NOT NULL,
-    gender VARCHAR2(6),
-    dob date NOT NULL,
-    email VARCHAR2(256) NOT NULL,
-    contact VARCHAR2(15) NOT NULL,
     defaultRoute INTEGER,
     drivingLicenseNo VARCHAR2(16),
-    userBalance MEDIUMINT ZEROFILL NOT NULL,
-    createdAt TIMESTAMP NOT NULL
+    user_access BOOLEAN,
+    registeredAt TIMESTAMP NOT NULL
 );
 
 
@@ -20,18 +16,22 @@ CREATE TABLE Users(
 1)primary key:
 
 ALTER TABLE Users
-ADD CONSTRAINT PK_users_id PRIMARY KEY (userId);
+ADD CONSTRAINT PK_user_id PRIMARY KEY (userId);
 
 2)check:
 
 ALTER TABLE Users
-ADD CONSTRAINT CHK_gender CHECK (gender='Male' OR gender='Female' OR gender='Other');
+ADD CONSTRAINT CHK_user_type usertype IN('Admin','Employee');
 
 3)foreign key:
 
 ALTER TABLE Users
 ADD CONSTRAINT FK_default_route
-FOREIGN KEY (defaultRoute) REFERENCES Persons(mapId);
+FOREIGN KEY (defaultRoute) REFERENCES Map(mapId);
+
+ALTER TABLE Users
+ADD CONSTRAINT FK_user_id
+FOREIGN KEY (userId) REFERENCES Employees(employeeId);
 
 4)default:
 
@@ -39,20 +39,14 @@ ALTER TABLE Users
 ALTER drivingLicenseNo SET DEFAULT NULL;
 
 ALTER TABLE Users
-ALTER userBalance SET DEFAULT 0;
+ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
 
-ALTER TABLE Users
-ALTER createdAt SET DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE Users ALTER user_access SET DEFAULT TRUE;
 
 5)unique:
 
 ALTER TABLE Users
 ADD CONSTRAINT UNQ_user_token UNIQUE (userToken);
 
-ALTER TABLE Users
-ADD CONSTRAINT UNQ_email UNIQUE (email);
-
-ALTER TABLE Users
-ADD CONSTRAINT UNQ_contact UNIQUE (contact);
 
 

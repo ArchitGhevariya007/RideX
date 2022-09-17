@@ -1,0 +1,49 @@
+
+CREATE TABLE Vehicles(
+    vehicleNo VARCHAR2(10),
+    vehicleType VARCHAR2(15) NOT NULL,
+    modelName VARCHAR2(256) NOT NULL,
+    modelType VARCHAR2(256) NOT NULL,
+    totalSeat SMALLINT NOT NULL,
+    registeredAt TIMESTAMP NOT NULL,
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+ALTER TABLE Vehicles
+ADD CONSTRAINT PK_vehicle_no PRIMARY KEY (vehicleNo);
+
+2)check:
+
+
+ALTER TABLE Vehicles
+ADD CONSTRAINT CHK_vehicle  CHECK(
+    (vehicleType IN('Two Wheeler','Three Wheeler') AND modelType IN('Bicycle','Tricycle') AND totalSeat IN(2,3))
+ OR (vehicleType IN('Four Wheeler','Multi Wheeler') AND modelType IN('Hatchback','Sedan','SUV','MUV','XUV','TUV','Van','Mini van','Bus','Minibus') AND totalSeat IN(5,6,7,8,9,10,25,45))
+    );
+
+
+3)foreign key:
+
+-
+
+4)default:
+
+
+ALTER TABLE Users
+ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
+
+5)unique:
+
+-
+
+
+
+note :
+
+vehicleNo == (exact length of 10) (driving license ni api thi validate) (e.g. GJ05HR0097)
+
+

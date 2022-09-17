@@ -1,13 +1,12 @@
 note: 
 
-userId == EmployeeId == userAuthId (take input and use regex e.g. EMP1234555) and must be exact 12 characters
+
+1) Users/ SIGNUP -AUTO FILL
+
+userId == EmployeeId reference kre che  (take input and use regex  of 2 type EMP1234567890/admin@ridex.com) {length-min:13 max:15}
+
 password can be less than 8 characters or greater than 16 characters
 userToken == for cookies (No input needed)
-name must be less than 256 characters
-gender can be (Male/Female/Other) (drop down)
-dob == date picker
-email == it must be unique as we are going to email some notifications. (max 256 characters) 
-contact == it must be unique as we are going to call (take input use regex e.g +91 96245 00000) ) (less than 15 characters) (give prefix +91)
 defaultRoute (total 6 input to backend => Another table first insert here and then to Users Table)
 {
     Location start : choose on map (location name)
@@ -17,6 +16,18 @@ defaultRoute (total 6 input to backend => Another table first insert here and th
     end latitude : *****
     end longitude : *****
 }
-drivingLicenseNo ==  (exact length 16 r.g GJ05 12345678901) (This is not null so input not required)
-userBalance == (input not required)
+drivingLicenseNo == (vaidate Driving license API)(exact length 16 r.g GJ05 12345678901) ( input not required)
 createdAt == (input not required)
+
+
+2)Employees/ Admin- Registraion of employee
+
+employeeId== (2 type EMP1234567890/admin@ridex.com) == {length-min:13 max:15}
+
+name must be less than 256 characters
+gender can be (Male/Female/Other) (drop down)
+dob == date picker
+email == it must be unique as we are going to email some notifications. (max 256 characters) 
+contact == it must be unique as we are going to call (take input use regex e.g +91 96245 00000) ) (less than 15 characters) (give prefix +91)
+userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
+(you can give dropdown+custom input box of number)
