@@ -38,7 +38,7 @@ ALTER TABLE Passengers_ride_map_bckp
 ALTER passengerRating SET DEFAULT NULL;
 
 ALTER TABLE Passengers_ride_map_bckp
-ALTER addedAt SET DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+ALTER addedAt SET DEFAULT CURRENT_TIMESTAMP;
 
 ALTER TABLE Passengers_ride_map_bckp ALTER passengerStatus SET DEFAULT TRUE;
 

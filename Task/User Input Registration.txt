@@ -166,10 +166,10 @@ RidexCoin == 1 to 100/1000/.../1000000 (dropdown+textbox)
 INRval == 1.0 to  100.00/1000.00/.../1000000.00 (dropdown+textbox)
 updatedAt == (auto updated field)
 
-8) Ridex_support
+8) Ridex_support (Two different interfaces)=>{1) on feedback giving time specialised ticket | 2) on application dashboard simple}
 
 
-ticketId == (no input )
+ticketId == (no input as it will be generated automatically in Database)
 registeredAt == (no input as auto generate at backend)
 
 @)user side input:
@@ -177,11 +177,15 @@ registeredAt == (no input as auto generate at backend)
 userId == {fetch from dashboard at complaint time}
 ticketDesctiption == (ask input less than 1000 ) (use <textarea>:fixed height width)
 
+ticketType=={fetch from dashboard interface as mentioned above and show like disable field but auto fill}
+
+rideId == {if above TicketType is Special then on feedback time whatever rideId is currently accessed by user fetch it  and make it auto fill and disable }
+
 ticketFeedback == (when admin resolve an issue then after email is sent by admin to user for feedback at that time user gives feedback)
 
 @)admin side input:
 
 ticketRemarks ==(no input when user creates ticket) (admin input when ticket gets resolved as admin mention how issue is resolved)
-TicketStatus == (no input when user creates ticket by default true) (admin input as Close(false) when ticket gets resolved)
+TicketStatus == (no input when user creates ticket by default 'Opened') (admin input as In 'Process' OR as 'Closed' when ticket gets resolved)
 resolvedAt == (when admin solves issue)(no input as auto generate at backend)
 

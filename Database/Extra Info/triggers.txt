@@ -6,18 +6,21 @@
 
 5)Rides
 
-TRIGGER FOR RIDE DELETION WHERE RECORDS ARE  STIMULTANEOUSLY DELETED FROM Passengers_ride_map
-and Backup is moved to backup Tables
-
+TRIGGER FOR RIDE DELETION and moving to Rides_bckp and also deleteing relevant passenger
+list from passenger_ride_map
 
 6)Passengers_ride_map
 
+whene Rides table trigger deletes records from this table then deletion trigger of this table 
+should move relevenat records to passenger_ride_map_bckp table 
 
 Trigger for PassengerRating on insert TRIGGER WILL calculate Average rating and insert into 
 Rides table in rideRating
 
-
 7)Ride_rate
+
 8)Ridex_support
 
 
+when tickets are recolved it means ticket status updates as'Closed' at that time delete record from
+this table and move to backup table

@@ -2,14 +2,17 @@
 CREATE TABLE Ridex_support(
     ticketId INTEGER AUTO_INCREMENT,
     userId VARCHAR2(21),
+    ticketType VARCHAR2(7),
+    rideId INTEGER,
     ticketDescription VARCHAR2(1000),
     ticketRemarks VARCHAR2(1000),
-    TicketStatus BOOLEAN,
+    TicketStatus VARCHAR2(10),
     registeredAt TIMESTAMP NOT NULL,
     resolvedAt TIMESTAMP,
     ticketFeedback SMALLINT ZEROFILL,
     PRIMARY KEY(ticketId)
 );
+
 
 
 =>Constraints:
@@ -21,6 +24,12 @@ CREATE TABLE Ridex_support(
 2)check:
 
 ALTER TABLE Ridex_support
+ADD CONSTRAINT CHK_ticket_type CHECK( (ticketType='General' AND rideId IS NULL) OR (ticketType='Special' AND rideId IS NOT NULL ) );
+
+ALTER TABLE Ridex_support
+ADD CONSTRAINT CHK_ticket_status ticketStatus IN('Opened','In Process','Closed');
+
+ALTER TABLE Ridex_support
 ADD CONSTRAINT CHK_ticket_feedack CHECK(ticketFeedback BETWEEN 0 AND 5);
 
 
@@ -30,9 +39,17 @@ ALTER TABLE Ridex_support
 ADD CONSTRAINT FK_ridex_support_user_id
 FOREIGN KEY(userId) REFERENCES Users(userId);
 
+ALTER TABLE Ridex_support
+ADD CONSTRAINT FK_ridex_support_ride_id
+FOREIGN KEY(rideId) REFERENCES Rides(rideId);
+
 4)default:
 
-ALTER TABLE Ridex_support ALTER ticketStatus SET DEFAULT TRUE;
+ALTER TABLE Ridex_support ALTER ticketType SET DEFAULT 'General';
+
+ALTER TABLE Ridex_support ALTER rideId SET DEFAULT NULL;
+
+ALTER TABLE Ridex_support ALTER ticketStatus SET DEFAULT 'Opened';
 
 ALTER TABLE Ridex_support
 ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
