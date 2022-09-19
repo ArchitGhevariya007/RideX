@@ -1,0 +1,55 @@
+
+CREATE TABLE Employees(
+    employeeId VARCHAR2(15),
+    name VARCHAR2(500) NOT NULL,
+    gender VARCHAR2(6),
+    dob date NOT NULL,
+    email VARCHAR2(256) NOT NULL,
+    contact VARCHAR2(15) NOT NULL,
+    userBalance MEDIUMINT ZEROFILL NOT NULL,
+    registeredAt TIMESTAMP NOT NULL
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+ALTER TABLE Employees
+ADD CONSTRAINT PK_employee_id PRIMARY KEY (employeeId);
+
+
+2)check:
+
+ALTER TABLE Employees
+ADD CONSTRAINT CHK_gender gender IN('Male','Female','Other');
+
+
+3)foreign key:
+
+-
+
+4)default:
+
+ALTER TABLE Employees
+ALTER userBalance SET DEFAULT 0;
+
+ALTER TABLE Employees
+ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
+
+5)unique:
+
+
+ALTER TABLE Employees
+ADD CONSTRAINT UNQ_email UNIQUE (email);
+
+ALTER TABLE Employees
+ADD CONSTRAINT UNQ_contact UNIQUE (contact);
+
+6)insert:
+
+insert into Employees(employeeId,name,gender,dob,email,contact) values('admin@ridex.com','Ridex Admin','Male','2022-09-21','ridex.mobility@gmail.com','+91 96245 61892');
+
+
+
+

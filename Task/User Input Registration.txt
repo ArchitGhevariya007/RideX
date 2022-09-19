@@ -1,13 +1,48 @@
 note: 
 
-userId == EmployeeId == userAuthId (take input and use regex e.g. EMP1234555) and must be exact 12 characters
-password can be less than 8 characters or greater than 16 characters
-userToken == for cookies (No input needed)
+
+
+1)Employees/ Admin- Registraion of employee
+
+employeeId== (2 type EMP1234567890/admin@ridex.com) == {length-min:13 max:15}
+
 name must be less than 256 characters
 gender can be (Male/Female/Other) (drop down)
 dob == date picker
 email == it must be unique as we are going to email some notifications. (max 256 characters) 
 contact == it must be unique as we are going to call (take input use regex e.g +91 96245 00000) ) (less than 15 characters) (give prefix +91)
+userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
+(you can give dropdown+custom input box of number)
+
+2)Map
+
+NOTE : Input method must be robust becuase from 18 year to 58 year age ap can be our audience so my suggestion
+
+just give two input box{start,end}  and based on that coordinate can be fetched from map and other one is same as but let the user choose location from map by selecting/clicking area point on map (not typing)
+ so that start and end input textbox will be filled automatically
+
+below are required map details
+
+endLocation == startLocation ==
+ (Human readable format) (ask user input)
+
+ (auto fetch from map based on selection/typing in textbox)
+{
+start_longitude==
+start_latitude ==
+end_latitude==
+end_longitude== 
+}
+
+createdAt==(user input not required)
+
+
+3) Users/ SIGNUP -AUTO FILL
+
+userId == EmployeeId reference kre che  (take input and use regex  of 2 type EMP1234567890/admin@ridex.com) {length-min:13 max:15}
+userType == {not required input by default 'Employee'}
+password can be less than 8 characters or greater than 16 characters
+userToken == for cookies (No input needed)
 defaultRoute (total 6 input to backend => Another table first insert here and then to Users Table)
 {
     Location start : choose on map (location name)
@@ -17,6 +52,140 @@ defaultRoute (total 6 input to backend => Another table first insert here and th
     end latitude : *****
     end longitude : *****
 }
-drivingLicenseNo ==  (exact length 16 r.g GJ05 12345678901) (This is not null so input not required)
-userBalance == (input not required)
+drivingLicenseNo == (vaidate Driving license API)(exact length 16 r.g GJ05 12345678901) ( input not required)
+userAcess == {input not needed by default allowed}
 createdAt == (input not required)
+
+
+4)Vehicles
+
+note :
+
+vehicleNo == (exact length of 10) (NumberPlate of vehicle validate API if available) (e.g. GJ05HR0097)
+vehicleAccess == (no input is needed by default true)
+
+---------> Below is dependent combos
+
+if(vehicleType=="Two wheeler")
+{
+    if(modelType=='Bicycle')
+    {
+        totalSeat = 2
+    }
+    else if(modelType=='Tricycle')
+    {
+        totalSeat = 3
+    }
+}
+else if(vehicleType=="Four wheeler")
+{
+    if(modelType=='Hatchback' OR modelType=='Sedan')
+    {
+        totalSeat = 5
+    }
+    else if(modelType=='SUV')
+    {
+        totalSeat = 8/9;
+    }
+    else if(modelType=='MUV')
+    {
+        totalSeat = 6/7/8/9;
+    }
+    else if(modelType=='XUV')
+    {
+        totalSeat = 5/6/7;
+    }
+    else if(modelType=='TUV')
+    {
+        totalSeat = 9;
+    }
+}
+else if(vehicleType=="Multiple wheeler")
+{
+
+    if(modelType=='Mini Van')
+    {
+        	     totalSeat = 8/9/10;
+    }
+   else if(modelType=='Van')
+    {
+               11 <= totalSeat =<  15;
+    }
+    else if(modelType=='Mini Bus')
+    {
+        	     16 <= totalSeat =<  30;
+    }
+    else if(modelType=='Bus')
+    {
+             31 <= totalSeat =<  45;
+    }
+
+}
+
+
+5) Rides
+
+note:
+
+[intial input]
+
+rideId == (Input not required)
+driverId == (From Users table(License No) auto fill from dashboard)
+vehicleId ==  (From Vehicle table auto fill from dashboard)
+routeId == (input from map selection from map table (mentioned in map Tb))
+accomCap == (user input ) (lengeth should be less than vehicle seat from vehicle table fetch from user dashboard)
+occupSeat == (input not required)
+
+[end input]
+rideRating (input not required as trigger is will calculate average from Passenger_ride_map table)
+
+rideStatus (input required as driver will end ride)
+
+createdAt (input not required)
+
+
+6) Passengers_ride_map
+
+rideId == (no input required)( auto fetch from dashboard from Ride table)
+
+passengerId ==  (no input required)( auto fetch from chat when driver accept request from Users table)
+
+passengerRating == (input from passenger at the end of ride)
+
+passengerStatus == (input from driver if he/she wants to eliminate passenger in between but by default active(TRUE))
+
+addedAt== (No input required) (auto field)
+
+7)Ride_rate
+
+admin panel input/update operation
+
+distanceUnitName == (Dropdown KM/Meter)
+IdealDistance == 1 to 100/1000/.../1000000 (dropdown+textbox)
+RidexCoin == 1 to 100/1000/.../1000000 (dropdown+textbox)
+INRval == 1.0 to  100.00/1000.00/.../1000000.00 (dropdown+textbox)
+updatedAt == (auto updated field)
+
+8) Ridex_support (Two different interfaces)=>{1) on feedback giving time specialised ticket | 2) on application dashboard simple}
+
+
+ticketId == (no input as it will be generated automatically in Database)
+registeredAt == (no input as auto generate at backend)
+
+@)user side input:
+
+userId == {fetch from dashboard at complaint time}
+ticketDesctiption == (ask input less than 1000 ) (use <textarea>:fixed height width)
+
+ticketType=={fetch from dashboard interface as mentioned above and show like disable field but auto fill}
+
+rideId == {if above TicketType is Special then on feedback time whatever rideId is currently accessed by user fetch it  and make it auto fill and disable }
+
+ticketFeedback == (when admin resolve an issue then after email is sent by admin to user for feedback at that time user gives feedback)
+
+@)admin side input:
+
+ticketRemarks ==(no input when user creates ticket) (admin input when ticket gets resolved as admin mention how issue is resolved)
+TicketStatus == (no input when user creates ticket by default 'Opened') (admin input as In 'Process' OR as 'Closed' when ticket gets resolved)
+resolvedAt == (when admin solves issue)(no input as auto generate at backend)
+

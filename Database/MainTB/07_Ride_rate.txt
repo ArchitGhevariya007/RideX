@@ -1,0 +1,43 @@
+
+CREATE TABLE Ride_rate(
+    distanceUnitName VARCHAR2(50)NOT NULL,
+    IdealDistance MEDIUMINT ZEROFILL NOT NULL,
+    RidexCoin MEDIUMINT ZEROFILL NOT NULL,
+    INRVal DOUBLE(9,2) ZEROFILL NOT NULL,
+    updatedAt TIMESTAMP NOT NULL
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+ALTER TABLE Ride_rate
+ADD CONSTRAINT PK_distance_unit_name PRIMARY KEY (distanceUnitName);
+
+2)check:
+
+ALTER TABLE Ride_rate
+ADD CONSTRAINT CHK_Ride_rate CHECK(IdealDistance BETWEEN 1 AND 1000000 AND RidexCoin BETWEEN 1 TO 1000000 AND INRVal BETWEEN 1.00 TO 1000000.00);
+
+
+3)foreign key:
+
+-
+
+4)default:
+
+
+ALTER TABLE Ride_rate
+ALTER updatedAt SET DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+
+5)unique:
+
+-
+
+
+6)insert:
+
+insert into Ride_rate(distanceUnitName,IdealDistance,RidexCoin,INRVal) values('Kilometer',1,1000,10.00);
+insert into Ride_rate(distanceUnitName,IdealDistance,RidexCoin,INRVal) values('Meter',1,1,0.01);

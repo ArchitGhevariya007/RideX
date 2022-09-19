@@ -1,0 +1,85 @@
+
+CREATE TABLE Ridex_support_bckp(
+    ticketId INTEGER AUTO_INCREMENT,
+    userId VARCHAR2(21),
+    ticketType VARCHAR2(7),
+    rideId INTEGER,
+    ticketDescription VARCHAR2(1000),
+    ticketRemarks VARCHAR2(1000),
+    TicketStatus VARCHAR2(10),
+    registeredAt TIMESTAMP NOT NULL,
+    resolvedAt TIMESTAMP NOT NULL,
+    ticketFeedback SMALLINT ZEROFILL,
+    PRIMARY KEY(ticketId)
+);
+
+
+
+=>Constraints:
+
+1)primary key:
+
+-
+
+2)check:
+
+ALTER TABLE Ridex_support_bckp
+ADD CONSTRAINT CHK_ticket_type_bckp CHECK( (ticketType='General' AND rideId IS NULL) OR (ticketType='Special' AND rideId IS NOT NULL ) );
+
+ALTER TABLE Ridex_support_bckp
+ADD CONSTRAINT CHK_ticket_status_bckp ticketStatus IN('Closed');
+
+ALTER TABLE Ridex_support_bckp
+ADD CONSTRAINT CHK_ticket_feedack_bckp CHECK(ticketFeedback BETWEEN 0 AND 5);
+
+
+3)foreign key:
+
+ALTER TABLE Ridex_support_bckp
+ADD CONSTRAINT FK_ridex_support_bckp_user_id
+FOREIGN KEY(userId) REFERENCES Users(userId);
+
+/*  NOTE : Multiple foreign key constraints  issue for Rides & Rides_bckp table
+ALTER TABLE Ridex_support_bckp
+ADD CONSTRAINT FK_ridex_support_bckp_ride_id
+FOREIGN KEY(rideId) REFERENCES Rides(rideId)
+*/
+
+
+
+4)default:
+
+ALTER TABLE Ridex_support_bckp ALTER ticketType SET DEFAULT 'General';
+
+ALTER TABLE Ridex_support_bckp ALTER rideId SET DEFAULT NULL;
+
+ALTER TABLE Ridex_support_bckp ALTER ticketStatus SET DEFAULT 'Closed';
+
+ALTER TABLE Ridex_support_bckp
+ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Ridex_support_bckp
+ALTER resolvedAt SET DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Ridex_support_bckp
+ALTER ticketRemarks SET DEFAULT "No remarks";
+
+ALTER TABLE Ridex_support_bckp
+ALTER ticketFeedback SET DEFAULT "Not given";
+
+
+
+5)unique:
+
+-
+
+---------------------------------------------------------------------------------------------
+
+1)Index:
+
+2)Views:
+
+3)Stored procedures:
+
+
+

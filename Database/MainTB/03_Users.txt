@@ -1,0 +1,52 @@
+
+CREATE TABLE Users(
+    userId VARCHAR2(21),
+    userType VARCHAR2(8) NOT NULL,
+    password VARCHAR2(1000) NOT NULL,
+    userToken VARCHAR2(1000) NOT NULL,
+    defaultRoute INTEGER ZEROFILL,
+    drivingLicenseNo VARCHAR2(16),
+    userAccess BOOLEAN,
+    registeredAt TIMESTAMP NOT NULL
+);
+
+
+=>Constraints:
+
+1)primary key:
+
+ALTER TABLE Users
+ADD CONSTRAINT PK_user_id PRIMARY KEY (userId);
+
+2)check:
+
+ALTER TABLE Users
+ADD CONSTRAINT CHK_user_type usertype IN('Admin','Employee');
+
+3)foreign key:
+
+ALTER TABLE Users
+ADD CONSTRAINT FK_default_route
+FOREIGN KEY (defaultRoute) REFERENCES Map(mapId);
+
+ALTER TABLE Users
+ADD CONSTRAINT FK_user_id
+FOREIGN KEY (userId) REFERENCES Employees(employeeId);
+
+4)default:
+
+ALTER TABLE Users
+ALTER drivingLicenseNo SET DEFAULT NULL;
+
+ALTER TABLE Users
+ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Users ALTER userAccess SET DEFAULT TRUE;
+
+5)unique:
+
+ALTER TABLE Users
+ADD CONSTRAINT UNQ_user_token UNIQUE (userToken);
+
+
+
