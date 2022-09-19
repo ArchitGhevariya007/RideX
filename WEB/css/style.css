@@ -33,10 +33,14 @@ input[type="text"],input[type="password"],input[type="number"]{
 input[type="button"]{
     width:328px;
     height:45px;
-    padding: 8px 5px 8px 15px;
     border-radius: 8px;
     border:0px;
     background-color:#000000;
     color:#ffffff;
     margin-top: 15px;
+}
+
+.forward{
+    border-radius: 50% !important;
+    width: 45px !important;
 }
