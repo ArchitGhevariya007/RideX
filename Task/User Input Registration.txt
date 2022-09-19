@@ -4,12 +4,13 @@ note:
 
 1)Employees/ Admin- Registraion of employee
 
-employeeId== (2 type EMP1234567890/admin@ridex.com) == {length-min:13 max:15}
+//here frontend will generate automatically/or use id given by institution
+employeeId== (2 type regex use EMP1234567890/admin@ridex.com) == {length-min:13 max:15}
 
-name must be less than 256 characters
+name ==must be less than 256 characters
 gender can be (Male/Female/Other) (drop down)
 dob == date picker
-email == it must be unique as we are going to email some notifications. (max 256 characters) 
+email ==(regex validation of email) it must be unique as we are going to email some notifications. (max 256 characters) 
 contact == it must be unique as we are going to call (take input use regex e.g +91 96245 00000) ) (less than 15 characters) (give prefix +91)
 userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
 (you can give dropdown+custom input box of number)
@@ -18,7 +19,9 @@ userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
 
 NOTE : Input method must be robust becuase from 18 year to 58 year age ap can be our audience so my suggestion
 
-just give two input box{start,end}  and based on that coordinate can be fetched from map and other one is same as but let the user choose location from map by selecting/clicking area point on map (not typing)
+before inserting must check if particular location (start and end) exists or not
+
+just give two input(Text) box{start,end}  and based on that coordinate can be fetched from map and other one is same as but let the user choose location from map by selecting/clicking area point on map (not typing)
  so that start and end input textbox will be filled automatically
 
 below are required map details
