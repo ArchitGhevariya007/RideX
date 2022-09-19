@@ -7,7 +7,7 @@ CREATE TABLE Map(
     startLongitude VARCHAR(10) NOT NULL,
     endLatitude VARCHAR(10) NOT NULL,
     endLongitude VARCHAR(10) NOT NULL,
-    createdAt TIMESTAMP NOT NULL,
+    createdAt TIMESTAMP,
     PRIMARY KEY(mapId)
 );
 

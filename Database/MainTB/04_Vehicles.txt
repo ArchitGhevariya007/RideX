@@ -6,7 +6,7 @@ CREATE TABLE Vehicles(
     modelType VARCHAR2(256) NOT NULL,
     totalSeat SMALLINT ZEROFILL NOT NULL,
     vehicleAccess BOOLEAN,
-    registeredAt TIMESTAMP NOT NULL,
+    registeredAt TIMESTAMP,
 );
 
 
@@ -35,10 +35,10 @@ ADD CONSTRAINT CHK_vehicle  CHECK(
 4)default:
 
 
+ALTER TABLE Vehicles ALTER vehicleAccess SET DEFAULT TRUE;
+
 ALTER TABLE Vehicles
 ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
-
-ALTER TABLE Vehicles ALTER vehicleAccess SET DEFAULT TRUE;
 
 5)unique:
 

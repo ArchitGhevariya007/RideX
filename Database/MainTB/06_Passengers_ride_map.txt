@@ -1,10 +1,10 @@
 
 CREATE TABLE Passengers_ride_map(
     rideId INTEGER,
-    passengerId VARCHAR2(21)
+    passengerId VARCHAR(15)
     passengerRating SMALLINT ZEROFILL,
     passengerStatus BOOLEAN,
-    addedAt TIMESTAMP NOT NULL,
+    addedAt TIMESTAMP,
 );
 
 
@@ -30,17 +30,18 @@ FOREIGN KEY (rideId) REFERENCES Rides(rideId) ON UPDATE CASCADE ON DELETE CASCAD
 
 ALTER TABLE Passengers_ride_map
 ADD CONSTRAINT FK_passenger_id
-FOREIGN KEY (passengerId) REFERENCES Users(usersId);
+FOREIGN KEY (passengerId) REFERENCES Users(userId);
 
 4)default:
 
 ALTER TABLE Passengers_ride_map
 ALTER passengerRating SET DEFAULT NULL;
 
+ALTER TABLE Passengers_ride_map ALTER passengerStatus SET DEFAULT TRUE;
+
 ALTER TABLE Passengers_ride_map
 ALTER addedAt SET DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
-ALTER TABLE Passengers_ride_map ALTER passengerStatus SET DEFAULT TRUE;
 
 5)unique:
 

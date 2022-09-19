@@ -15,6 +15,9 @@ contact == it must be unique as we are going to call (take input use regex e.g +
 userBalance == ( Amount in Coins-Ride-X currency 30/60/120.../Custom)
 (you can give dropdown+custom input box of number)
 
+
+NOTE: email sent to employee to create account on portal
+
 2)Map
 
 NOTE : Input method must be robust becuase from 18 year to 58 year age ap can be our audience so my suggestion
@@ -40,11 +43,11 @@ end_longitude==
 createdAt==(user input not required)
 
 
-3) Users/ SIGNUP -AUTO FILL
+3) Users/ SIGNUP -AUTO FILL WITH EDIT OPTION
 
-userId == EmployeeId reference kre che  (take input and use regex  of 2 type EMP1234567890/admin@ridex.com) {length-min:13 max:15}
+userId == EmployeeId reference kre che  (take input and use regex  of 2 type EMP1234567890/admin@ridex.com) {length-min:13 max:15} (based on this details of employee tabled should be fetched and autofill here for confirmation )
 userType == {not required input by default 'Employee'}
-password can be less than 8 characters or greater than 16 characters
+password can be less than 8 characters or greater than 16 characters (	1 Capital 1 small 1 special 1 digit)
 userToken == for cookies (No input needed)
 defaultRoute (total 6 input to backend => Another table first insert here and then to Users Table)
 {
@@ -55,7 +58,8 @@ defaultRoute (total 6 input to backend => Another table first insert here and th
     end latitude : *****
     end longitude : *****
 }
-drivingLicenseNo == (vaidate Driving license API)(exact length 16 r.g GJ05 12345678901) ( input not required)
+drivingLicenseNo == (vaidate Driving license API)(exact length 16 r.g GJ05 12345678901) ( input not necessary)
+****before insertion must check if registered already or not and give relevant error message 
 userAcess == {input not needed by default allowed}
 createdAt == (input not required)
 
@@ -75,7 +79,10 @@ if(vehicleType=="Two wheeler")
     {
         totalSeat = 2
     }
-    else if(modelType=='Tricycle')
+}
+else if(vehicleType=="Three wheeler")
+{
+    if(modelType=='Tricycle')
     {
         totalSeat = 3
     }
@@ -103,7 +110,7 @@ else if(vehicleType=="Four wheeler")
         totalSeat = 9;
     }
 }
-else if(vehicleType=="Multiple wheeler")
+else if(vehicleType=="Multi wheeler")
 {
 
     if(modelType=='Mini Van')
@@ -133,11 +140,11 @@ note:
 [intial input]
 
 rideId == (Input not required)
-driverId == (From Users table(License No) auto fill from dashboard)
-vehicleId ==  (From Vehicle table auto fill from dashboard)
+driverId == (From Users table(userId) auto fill from dashboard)
+vehicleId ==  (From Vehicle table selecion from dashboard vehicle registered option)
 routeId == (input from map selection from map table (mentioned in map Tb))
-accomCap == (user input ) (lengeth should be less than vehicle seat from vehicle table fetch from user dashboard)
-occupSeat == (input not required)
+accomCap == (user input ) (length should be less than vehicle seat from vehicle table fetch from user dashboard vehicle registered option)
+occupSeat == (input not required/by default 0 and on each request accept it should incremented until its full)
 
 [end input]
 rideRating (input not required as trigger is will calculate average from Passenger_ride_map table)
