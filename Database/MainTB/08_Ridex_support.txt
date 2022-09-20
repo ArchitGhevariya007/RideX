@@ -1,12 +1,12 @@
 
 CREATE TABLE Ridex_support(
     ticketId INTEGER AUTO_INCREMENT,
-    userId VARCHAR2(21),
-    ticketType VARCHAR2(7),
+    userId VARCHAR(15),
+    ticketType VARCHAR(7),
     rideId INTEGER,
-    ticketDescription VARCHAR2(1000),
-    ticketRemarks VARCHAR2(1000),
-    TicketStatus VARCHAR2(10),
+    ticketDescription VARCHAR(1000) NOT NULL,
+    ticketRemarks VARCHAR(1000),
+    TicketStatus VARCHAR(10), 
     registeredAt TIMESTAMP NOT NULL,
     resolvedAt TIMESTAMP,
     ticketFeedback SMALLINT ZEROFILL,
@@ -49,6 +49,9 @@ ALTER TABLE Ridex_support ALTER ticketType SET DEFAULT 'General';
 
 ALTER TABLE Ridex_support ALTER rideId SET DEFAULT NULL;
 
+ALTER TABLE Ridex_support
+ALTER ticketRemarks SET DEFAULT "No remarks yet";
+
 ALTER TABLE Ridex_support ALTER ticketStatus SET DEFAULT 'Opened';
 
 ALTER TABLE Ridex_support
@@ -56,9 +59,6 @@ ALTER registeredAt SET DEFAULT CURRENT_TIMESTAMP;
 
 ALTER TABLE Ridex_support
 ALTER resolvedAt SET DEFAULT NULL;
-
-ALTER TABLE Ridex_support
-ALTER ticketRemarks SET DEFAULT "No remarks";
 
 ALTER TABLE Ridex_support
 ALTER ticketFeedback SET DEFAULT "Not given";

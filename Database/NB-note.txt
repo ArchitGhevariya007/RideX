@@ -30,3 +30,8 @@ for instance, "userToken" ,"password" ,"userBalance"
 
 for instance, "PK_users_id","CHK_person"
 
+4) Security contsraints level of database should be minimal and necessary
+
+for instance, do not apply not null and default together
+
+

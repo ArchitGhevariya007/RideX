@@ -65,6 +65,12 @@ ALTER TABLE Rides_bckp ALTER rideStatus SET DEFAULT TRUE;
 
 1)Index:
 
+driverId//?
+vehicleId//?
+accomCap//?!
+occupSeat //?!
+rideStatus//?
+
 2)Views:
 
 3)Stored procedures:

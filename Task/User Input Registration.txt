@@ -170,7 +170,7 @@ addedAt== (No input required) (auto field)
 
 admin panel input/update operation
 
-distanceUnitName == (Dropdown KM/Meter)
+distanceUnitName == (Dropdown KM/Meter)(data should be entered in lowercase only as it is primary key)
 IdealDistance == 1 to 100/1000/.../1000000 (dropdown+textbox)
 RidexCoin == 1 to 100/1000/.../1000000 (dropdown+textbox)
 INRval == 1.0 to  100.00/1000.00/.../1000000.00 (dropdown+textbox)

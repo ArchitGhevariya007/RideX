@@ -1,10 +1,10 @@
 
 CREATE TABLE Passengers_ride_map(
     rideId INTEGER,
-    passengerId VARCHAR(15)
+    passengerId VARCHAR(15),
     passengerRating SMALLINT ZEROFILL,
     passengerStatus BOOLEAN,
-    addedAt TIMESTAMP,
+    addedAt TIMESTAMP
 );
 
 

@@ -1,12 +1,12 @@
 
 CREATE TABLE Vehicles(
-    vehicleNo VARCHAR2(10),
-    vehicleType VARCHAR2(15) NOT NULL,
-    modelName VARCHAR2(256) NOT NULL,
-    modelType VARCHAR2(256) NOT NULL,
+    vehicleNo VARCHAR(10),
+    vehicleType VARCHAR(15) NOT NULL,
+    modelName VARCHAR(256) NOT NULL,
+    modelType VARCHAR(256) NOT NULL,
     totalSeat SMALLINT ZEROFILL NOT NULL,
     vehicleAccess BOOLEAN,
-    registeredAt TIMESTAMP,
+    registeredAt TIMESTAMP
 );
 
 
