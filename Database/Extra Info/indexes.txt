@@ -2,6 +2,7 @@
 
 CREATE UNIQUE INDEX idx_employees_email ON Employees(email);
 CREATE UNIQUE INDEX idx_employees_contact ON Employees(contact);
+CREATE BITMAP INDEX idx_employees_gender ON Employees(gender);
 
 2)Map
 
@@ -15,12 +16,17 @@ userType  //?!
 
 CREATE UNIQUE INDEX idx_map_user_token ON Users(userToken);
 CREATE UNIQUE INDEX idx_map_user_driving_lic_no ON Users(drivingLicenseNo);
+CREATE BITMAP INDEX idx_map_user_access ON Users(userAccess);
+CREATE BITMAP INDEX idx_map_user_type ON Users(userType);
 
 4)Vehicles
 
 totalSeat//?
 vehicleType//?
 vehicleAccess//?!
+
+CREATE BITMAP INDEX idx_vehicle_access ON Users(vehicleAccess);
+CREATE BITMAP INDEX idx_vehicle_type ON Users(vehicleType);
 
 5)Rides
 
@@ -30,25 +36,38 @@ accomCap//?!
 occupSeat //?!
 rideStatus//?
 
+CREATE INDEX idx_ride_driver_id ON Rides(driverId);
+CREATE INDEX idx_ride_vehicle_id ON Rides(vehicleId);
+CREATE BITMAP INDEX idx_ride_status ON Rides(rideStatus);
+
+
+
+
 6)Passengers_ride_map
 
 composite:
 
 rideId//?!
 passengerId//?!
-
 passengerStatus //?!
 
+CREATE BITMAP INDEX idx_passenger_status ON
+Passengers_ride_map(passengerStatus);
 
 7)Ride_rate
 
 CREATE INDEX idx_ride_rate_ideal_distance ON Ride_rate(IdealDistance);
-CREATE INDEX idx_ride_rate_ridex_coin ON Ride_rate(RidexCoin);
-CREATE INDEX idx_ride_rate_inr_val ON Ride_rate(INRVal);
+
 
 8)Ridex_support
 
-userId//?!
+composite:
+
+userId//?! 
 rideId//?!
 TicketStatus//?
+
+CREATE INDEX idx_ridex_support_user_ride_id ON Ridex_support(userId,rideId);
+CREATE BITMAP INDEX idx_ridex_support_user_id ON Ridex_support(userId);
+
 
