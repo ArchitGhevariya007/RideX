@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideX</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+    <script src="assets/icons/font_awsome.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- css -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/map.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <navbar class="nav">
+        <!-- <img src="./assets/RideX.png" alt="logo" class="logo"> -->
+        <img src="./assets/RideX.png" alt="logo" class="logo">
+    </navbar>
+    <!-- <section id="singup_container">
+        <div class="container d-flex justify-content-center col-2">
+            <div class="row">
+                <div class="col">
+                    <form class="mt-5">
+                        <input type="text" id="from" placeholder="Origin" class="form-control">
+                        <input type="text" id="to" placeholder="Destination" class="form-control">
+                        <button type="button" class="" onclick="calcRoute();">Get ride</button>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="container-fluid">
+            <div id="googleMap">
+
+            </div>
+            <div id="output">
+
+            </div>
+        </div>
+
+        <!-- <div class="earth3dmap-com"><iframe id="iframemap" src="https://maps.google.com/maps?q=surat&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="500" frameborder="0" scrolling="no"></iframe><div style="color: #333; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text-align: right; padding: 10px;">Map by <a style="color: #333; text-decoration: underline; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text-align: right;" href="http://earth3dmap.com/?from=embed" target="_blank" >Earth3DMap.com</a></div> -->
+    </section>
+
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSNW7Pt4PQZ7qxeT6rrTAQoBqpcw51KBE&libraries=places"></script> -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places,drawing&client=gme-snapchatinc&channel=on-demand"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="./js/map.js"></script>
+
+</body>
+
+</html>
