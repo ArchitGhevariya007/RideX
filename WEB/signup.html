@@ -58,7 +58,7 @@
         $(".forward").on('click', ()=>{
             $('.singup_details').toggleClass('show');
             $('.btn_wrapper').toggleClass('tx_align_left');
-            if($(".forward").html() == 'Next <i class="fa-light fa-arrow-right" style="user-select: auto;"></i>')
+            if($(".forward").text() == 'Next ')
             {
                 $(".forward").html(`<i class="fa-light fa-arrow-left" style="user-select: auto;"></i> Back`)
             }
