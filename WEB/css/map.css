@@ -1,18 +1,39 @@
 /*map*/
 #googleMap {
+    /* position:relative; */
     width: 100%;
-    height: 643px;
+    height: 624px;
+    position: relative;
+}
 
-    position: fixed;
-  }
-
-  /*output box*/
+/*output box*/
 #output {
     text-align: center;
     font-size: 2em;
     margin: 20px auto;
-  }
-  
-  #mode {
+}
+
+#mode {
     color: black;
-  }
+}
+
+.map_container {
+    position: absolute;
+    z-index: 9;
+    background-color: #ffffff;
+    /* width: 28%; */
+    height: 500px;
+    left: 3%;
+    top: 12%;
+    border-radius: 16px;
+}
+
+.select_route{
+    font-size:25px;
+    font-weight:bold;
+
+}
+
+input[type="text"]{
+    width: 100%;
+}   
