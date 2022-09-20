@@ -35,7 +35,7 @@
                 <div class="col">
                     <form class="mt-5">
                         <h1>Welcome! Singup to get started</h1>
-                        <input type="text" placeholder="User ID">
+                        <input type="text" id="userid" placeholder="User ID">
                         <div class="singup_details">
                             <input type="text" placeholder="Enter name">
                             <input type="text" placeholder="Enter email">
@@ -56,6 +56,7 @@
     <script>
         /*HIDE SHOW Singup_details*/
         $(".forward").on('click', ()=>{
+            // $('#userid').toggle();
             $('.singup_details').toggleClass('show');
             $('.btn_wrapper').toggleClass('tx_align_left');
             if($(".forward").text() == 'Next ')
