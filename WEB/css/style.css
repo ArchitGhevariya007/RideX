@@ -47,6 +47,9 @@ button[type="button"]{
     color:#ffffff;
     margin-top: 15px;
 }
+button[type="button"]:hover{
+    background-color: #333;
+}
 
 input[type="radio"]:checked{
     accent-color:#000000;
@@ -65,6 +68,7 @@ input[type="radio"]:checked{
 
 .forward i{
     padding-left: 5px;
+    padding-right: 5px;
     font-weight: 500;
 }
 
@@ -97,6 +101,7 @@ input[type="radio"]:checked{
 
 
 .gender{
+    display:inline-block;
     width:328px;
     height:45px;
     padding: 8px 5px 8px 15px;
@@ -105,4 +110,26 @@ input[type="radio"]:checked{
     background-color:#eeeeee;
     color:#6b6b6b;
     margin-bottom: 12px;
+}
+.singup_details{
+    transition:none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    /* display: none; */
+}
+.btn_wrapper{
+    margin-left:0;
+    transition:all 1s ease;
+}
+.tx_align_left{
+    margin-left:230px;
+}
+.show{
+    
+    transition: all 0.5s ease-in-out;
+    width:auto;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
 }
