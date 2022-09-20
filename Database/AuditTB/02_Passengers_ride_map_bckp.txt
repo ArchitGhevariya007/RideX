@@ -51,6 +51,14 @@ ALTER TABLE Passengers_ride_map_bckp ALTER passengerStatus SET DEFAULT TRUE;
 
 1)Index:
 
+composite:
+
+rideId//?!
+passengerId//?!
+
+passengerStatus //?!
+
+
 2)Views:
 
 3)Stored procedures:

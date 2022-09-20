@@ -77,6 +77,10 @@ ALTER ticketFeedback SET DEFAULT "Not given";
 
 1)Index:
 
+userId//?!
+rideId//?!
+TicketStatus//?
+
 2)Views:
 
 3)Stored procedures:
