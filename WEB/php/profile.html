@@ -21,6 +21,7 @@
     <!-- css -->
 
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/profile.css" rel="stylesheet">
 
     <!-- Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -33,14 +34,15 @@
         <img src="../assets/RideX.png" alt="logo" class="logo">
     </navbar>
 
-    <div class="container">
+    <div class="container profile_container">
         <div class="row">
             <div class="col-md-2 mt-5">
                 <img src="../assets/profile.jpg" class="profile_pic">
             </div>
 
-            <div class="col-md-8 mt-4">
+            <div class="col-md-6 mt-4">
                 <form>
+                    <p class="heading">Profile details</p>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label class="profile_title">Name</label>
@@ -71,14 +73,27 @@
                         <input type="date" name="birthdate">
                         </div>
 
-                    
+                        <div class="form-group col-md-6">
+                            <label class="profile_title">User balance</label>
+                        <input type="number" name="" placeholder="User balance" value="100">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <button type="button" class="update_btn">Update</button>
+                            <button type="button" class="logout_btn">Log out</button>
+                        </div>
+
+
 
                 </form>
 
             </div>
+            </div>
 
-            <div class="col-md-2 mt-5">
-                One of three columns
+            <div class="col-md-4 mt-5 profile_last_section">
+                <img src="../assets/profile_illustrator.svg" class="profile_illustrator">
+                <p class="profile_illustrator_text">Get a trip in minutes</p>
+                <button type="button" class="request_ride_btn">Request a ride</button>
             </div>
         </div>
     </div>

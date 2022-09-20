@@ -1,0 +1,45 @@
+.heading{
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom:20px;
+}
+
+.update_btn{
+    width: 95px !important;
+}
+
+.logout_btn{
+    width: 95px !important;
+    color: #e11900 !important;
+    background-color:#eeeeee !important;
+    font-weight: bold !important;
+}
+
+.logout_btn:hover{
+    background-color:#e2e2e2 !important;
+}
+
+.profile_last_section{
+    margin-right:0px;
+}
+.profile_illustrator{
+    width: 300px;
+    height: 103px;
+}
+
+.profile_illustrator_text{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.request_ride_btn{
+    width:120px !important;  
+}
+
+
+@media only screen and (max-width: 450px) {
+    .profile_container{
+        left: 10%;
+    }
+  }
+
