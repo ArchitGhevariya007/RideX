@@ -1,9 +1,9 @@
 //javascript.js
 //set map options
-var myLatLng = { lat: 38.3460, lng: -0.4907 };
+var myLatLng = { lat: 21.1535, lng: 72.7832 };
 var mapOptions = {
     center: myLatLng,
-    zoom: 7,
+    zoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 
 };
