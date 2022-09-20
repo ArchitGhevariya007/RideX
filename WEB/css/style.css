@@ -3,6 +3,11 @@
     src: url(./assets/fonts/UberMoveMedium.otf);
  }
 
+ *{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+ }
+
 .nav{
     background-color:#000000;
     padding: 12px 12px 12px 30px;
@@ -12,6 +17,8 @@
 .logo{
     width:80px;
 }
+
+/* HTML Input prop. Start*/
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -40,7 +47,45 @@ input[type="button"]{
     margin-top: 15px;
 }
 
+input[type="radio"]:checked{
+    accent-color:#000000;
+}
+
+
+/* HTML Input prop. End*/
+
+
 .forward{
     border-radius: 50% !important;
     width: 45px !important;
 }
+
+
+.location_container{
+    background-color: rgba(127, 127, 127, 0.364);
+    width: 350px;
+    margin-top: 130px;
+    border-radius: 16px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+
+.icons{
+    font-size:20px;
+}
+
+.profile_title{
+    width:100px;
+    font-weight: 600;
+}
+
+.profile_pic{
+    width:90px;
+    height:90px;
+    border-radius: 50%;
+}
+
+
+
