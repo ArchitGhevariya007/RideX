@@ -29,20 +29,19 @@
         <!-- <img src="./assets/RideX.png" alt="logo" class="logo"> -->
         <img src="./assets/RideX.png" alt="logo" class="logo">
     </navbar>
-    <section id="singup_container">
+    <section id="singin_container">
         <div class="container d-flex justify-content-center col-2">
             <div class="row">
                 <div class="col">
                     <form class="mt-5">
-                        <h1>Welcome! Singup to get started</h1>
-                        <input type="text" placeholder="User ID">
-                        <div class="singup_details">
-                            <input type="text" placeholder="Enter name">
-                            <input type="text" placeholder="Enter email">
-                            <input type="number" placeholder="Enter mobile number">
-                            <input type="text" placeholder="Enter driving license number">
+                        <h1>Hello again, User!</h1>
+                        <input type="text" id="email" placeholder="Enter email">
+                        <div class="singin_details">
                             <input type="password" placeholder="Password">
-                            <button type="button">Continue</button>
+                           
+                            <button type="button" class="mb-4">Continue</button>
+                            <a>Not you?</a><br>
+                            <a>I'hv forgotten my password</a>
                         </div>
                         <div class="btn_wrapper">
                             <button type="button" class="forward">Next <i class="fa-light fa-arrow-right"></i></button>
@@ -56,8 +55,11 @@
     <script>
         /*HIDE SHOW Singup_details*/
         $(".forward").on('click', ()=>{
-            $('.singup_details').toggleClass('show');
+            $("#singin_container form > h1").html($("#singin_container form > h1").html() == "Hello again, User!"?"Welcome back, User!":"Hello again, User!")
+            // $("#email").toggle();
+            $('.singin_details').toggleClass('show');
             $('.btn_wrapper').toggleClass('tx_align_left');
+
             if($(".forward").html() == 'Next <i class="fa-light fa-arrow-right" style="user-select: auto;"></i>')
             {
                 $(".forward").html(`<i class="fa-light fa-arrow-left" style="user-select: auto;"></i> Back`)

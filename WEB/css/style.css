@@ -111,7 +111,7 @@ input[type="radio"]:checked{
     color:#6b6b6b;
     margin-bottom: 12px;
 }
-.singup_details{
+.singup_details,.singin_details{
     transition:none;
     opacity: 0;
     visibility: hidden;
@@ -123,7 +123,7 @@ input[type="radio"]:checked{
     transition:all 1s ease;
 }
 .tx_align_left{
-    margin-left:230px;
+    margin-left:235px;
 }
 .show{
     
@@ -132,4 +132,19 @@ input[type="radio"]:checked{
     opacity: 1;
     visibility: visible;
     height: auto;
+}
+#singup_container form > h1,#singin_container form > h1{
+    font-size:28px !important;
+    color:#000;
+    font-weight:500;
+    margin-bottom:25px;
+}
+.singin_details  a{
+    color:black;
+    margin-bottom:10px;
+    padding: 8px 12px;
+    /* background-color: #EEEEEE; */
+    border: 2px solid black;
+    display: inline-block;
+    border-radius: 20px;
 }
