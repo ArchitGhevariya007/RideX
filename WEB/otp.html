@@ -59,7 +59,7 @@
         function optTimer() {
             $("#otp_timer").prop("disabled", true);
 
-            let counter = 10;
+            let counter = 60;
             let timer = setInterval(function () {
                 $('#otp_timer').text(`I haven't received a code(0:${counter>=10?counter:'0'+counter})`);
                 counter--;
