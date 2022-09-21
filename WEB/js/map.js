@@ -6,9 +6,7 @@ var mapOptions = {
     zoom: 17,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     streetViewControl: false,
-    mapTypeControl: false,
-    gestureHandling: "none",
-    zoomControl: false
+    mapTypeControl: false
 
 };
 

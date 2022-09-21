@@ -36,6 +36,13 @@
     width:120px !important;  
 }
 
+.subtitle{
+font-size:16px;
+color:#545454;
+margin-top:-8px;
+margin-bottom: 15px;
+}
+
 
 @media only screen and (max-width: 450px) {
     .profile_container{

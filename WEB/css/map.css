@@ -37,3 +37,11 @@
 input[type="text"]{
     width: 100%;
 }   
+
+
+@media only screen and (max-width: 766px) {
+    .map_container{
+        width:93%;
+        height:45%;
+    }
+  }
