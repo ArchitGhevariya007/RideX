@@ -12,19 +12,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous"></script>
-
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+        </script>
+    <script src="../assets/icons/font_awsome.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- css -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
 
     <link href="../css/style.css" rel="stylesheet">
-
-    <!-- Icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link href="../css/map.css" rel="stylesheet">
+    <style>
+        .rating {
+            font-size: 25px;
+            margin-left: 25px;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,22 +40,49 @@
     </navbar>
 
 
-
-    <div class="container d-flex justify-content-center col-2 location_container">
-        <div class="row">
-            <div class="col">
-                <form class="mt-5">
-                    <i class='bx bxs-map icons'></i>
-                    <input type="text" placeholder="Start location">
-                    <i class='bx bxs-flag-alt icons'></i>
-                    <input type="text" placeholder="End location">
-                    <input type="button" value="Ask for ride">
-                </form>
-
+    <div class="container col-md-3 map_container">
+        <form class="mt-5">
+            <p class="select_route" style="text-align: center;">Rating</p>
+            <div class="" style="margin-top:50px;margin-left:13px;">
+                <i class="fa-sharp fa-solid fa-star rating"></i><i class="fa-sharp fa-solid fa-star rating"></i><i
+                    class="fa-sharp fa-solid fa-star rating"></i><i class="fa-light fa-star rating"></i><i
+                    class="fa-light fa-star rating"></i>
+                <div class="row" style="margin-top:35px;margin-left:10px;">
+                    <div class="col">
+                        <button type="button" class="" onclick="calcRoute();" style="width:100px;">Cancle</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="" onclick="calcRoute();" style="width:100px;">Submit</button>
+                    </div>
+                </div>
+                <!-- <button type="button" class="" onclick="calcRoute();" style="width:300px;text-align: center;">Rider</button> -->
             </div>
-        </div>
+
+            <div id="output"></div>
+        </form>
+    </div>
     </div>
 
+    <div class="container-fluid">
+        <i class="fa-solid fa-angle-down down_arrow"></i>
+        <div id="googleMap">
+
+        </div>
+
+    </div>
+
+    <!-- <div class="earth3dmap-com"><iframe id="iframemap" src="https://maps.google.com/maps?q=surat&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="500" frameborder="0" scrolling="no"></iframe><div style="color: #333; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text-align: right; padding: 10px;">Map by <a style="color: #333; text-decoration: underline; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text-align: right;" href="http://earth3dmap.com/?from=embed" target="_blank" >Earth3DMap.com</a></div> -->
+
+
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSNW7Pt4PQZ7qxeT6rrTAQoBqpcw51KBE&libraries=places"></script> -->
+
+
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places,drawing&client=gme-snapchatinc&channel=on-demand"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../js/map.js"></script>
 
 </body>
 

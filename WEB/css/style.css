@@ -155,7 +155,7 @@ input[type="radio"]:checked{
     background-color: #eee;
     text-decoration: none;
     margin-top: 0;
-    padding:8px 12px;
+    padding:2px 12px;
     border-radius: 20px;
     transition: all 0.3s ease;
     display: inline;
@@ -195,3 +195,7 @@ input[type="radio"]:checked{
     -webkit-appearance: none; 
     margin: 0; 
   }
+
+  /* .page_title{
+    font-weight: bold !important;
+  } */

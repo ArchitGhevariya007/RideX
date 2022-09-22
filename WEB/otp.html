@@ -35,10 +35,11 @@
             <div class="row">
                 <div class="col">
                     <form class="mt-5">
-                        <h1>Enter the 4-digit code sent to you at your email</h1>
+                        <!-- <h1>Enter the 4-digit code sent to you at your email</h1> -->
+                        <h1>Enter verification code</h1>
 
                         <div class="otp_details">
-                            <div class="opt_input mb-4">
+                            <div class="opt_input mb-4 d-flex justify-content-center">
                                 <input id="otp-first" type="number" min="0" max="9" step="1" aria-label="first digit" />
                                 <input id="otp-second" type="number" min="0" max="9" step="1"
                                     aria-label="second digit" />
@@ -46,8 +47,10 @@
                                 <input id="otp-fourth" type="number" min="0" max="9" step="1"
                                     aria-label="fourth digit" />
                             </div>
-                            <button type="button" id="otp_timer" disabled>I haven't received a code(0:00)</button>
-                            <button type="button" class="mb-4">Continue</button>
+                            <div class="d-flex justify-content-center">
+                            <button  type="button" id="otp_timer" disabled>I haven't received a code(0:00)</button>
+                            </div>
+                            <button type="button" class="mb-4 mt-5">Continue</button>
                         </div>
 
                     </form>

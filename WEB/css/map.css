@@ -43,5 +43,14 @@ input[type="text"]{
     .map_container{
         width:93%;
         height:45%;
+        margin-top: 25px;
     }
   }
+
+.down_arrow{
+    font-size: 25px;
+    position: absolute;
+    z-index: 1;
+    top: 75px;
+    left: 170px;
+}
