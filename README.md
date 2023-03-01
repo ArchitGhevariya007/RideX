@@ -17,7 +17,7 @@
 <br>
 <br>
 
-RideX is Vehicle sharing system across regional area of logged in users in realtime.
+RideX is very fast reliable vehicle sharing system for employee,students,senior citizen across the country. It is completey free and secure system for reaching at appropriate destination in meantime. It also offers fuel saving benefits and reduced ride cost by utilizing resources and saves environment from reducing pollution effects.
 <br>
 <hr>
 <b>Hosting server : &nbsp; Infinity Free Servers</b>
