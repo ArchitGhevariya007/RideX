@@ -2,10 +2,10 @@
 
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="IMAGES/hotel-paradise.png" alt="Logo" width="190" height="190">
+    <img src="WEB/assets/logo_dark.png" alt="Logo" width="190" height="100">
   </a>
 
-<h3 align="center">RideX  Vehicle Sharing System</h3>
+<h3 align="center">Vehicle Sharing System</h3>
 
 <p align="center">
     <b>Online Web App for Vehicle Sharing</b>
