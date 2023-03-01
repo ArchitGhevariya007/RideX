@@ -1,5 +1,31 @@
-# RideX
- 
+
+
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="IMAGES/hotel-paradise.png" alt="Logo" width="190" height="190">
+  </a>
+
+<h3 align="center">RideX  Vehicle Sharing System</h3>
+
+<p align="center">
+    <b>Online Web App for Vehicle Sharing</b>
+    <br />
+  </p>
+  <a  href="https://ridex.ml " target="blank" >View Demo</a>
+</div>
+
+<br>
+<br>
+
+RideX is Vehicle sharing system across regional area of logged in users in realtime.
+<br>
+<hr>
+<b>Hosting server : &nbsp; Infinity Free Servers</b>
+
+
+
+
+
 
   ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -8,8 +34,7 @@
   ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
   ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
   ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-  ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+  ![Infinity](https://img.shields.io/badge/InfinityFree-%23430098.svg?style=for-the-badge&logo=InfinityFree&logoColor=white)
   ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-RideX is Vehical Sharing System.
-for the sachivalaya employees across the district ahemdabad and gandhinagar.
+
